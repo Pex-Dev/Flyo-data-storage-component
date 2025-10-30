@@ -1,0 +1,215 @@
+:root {
+  --background-color: #0c122c;
+  --primary-color: #1e2c69;
+  --text-color: #dddbff;
+  --gray: #848794;
+  --progress-start-color: #ff9f96;
+  --progress-end-color: #ef579b;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 2rem;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+  min-height: 100vh;
+  background-image: url("../images/bg-mobile.png");
+  background-position: center;
+  background-size: cover;
+}
+
+p {
+  margin: 0;
+}
+
+.flyo {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 3.7rem;
+  width: 100%;
+  max-width: 45rem;
+}
+
+.flyo__info {
+  background-color: var(--primary-color);
+  padding: 4.4rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-right-radius: 10rem;
+  width: 100%;
+}
+
+.flyo__icons {
+  display: flex;
+  margin-top: 2.8rem;
+  gap: 2rem;
+}
+
+.flyo__icon {
+  padding: 1.4rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  width: 5rem;
+  transition: background-color 0.2s ease;
+}
+
+.flyo__icon:hover {
+  background-color: #131a3b;
+}
+
+.flyo__storage {
+  width: 100%;
+  position: relative;
+  max-height: 17rem;
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  padding: 4.4rem;
+}
+
+.flyo__text {
+  color: var(--text-color);
+}
+
+.flyo__progress {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.2rem;
+}
+
+.flyo__bar {
+  padding: 0.3rem;
+  background-color: var(--background-color);
+  width: 100%;
+  height: 2rem;
+  border-radius: 1rem;
+}
+
+.flyo__bar--used {
+  display: flex;
+  justify-content: end;
+  padding: 0.2rem;
+  height: 100%;
+  width: 80%;
+  border-radius: 1rem;
+  background: var(--progress-start-color);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 159, 150, 1) 0%,
+    rgba(239, 87, 155, 1) 100%
+  );
+}
+
+.flyo__bar--used::after {
+  display: flex;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--text-color);
+  border-radius: 100%;
+  content: "";
+}
+
+.flyo__range {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.4rem;
+}
+
+.flyo__range span {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.flyo__remaining {
+  position: absolute;
+  padding: 1.5rem 2.4rem;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  border-radius: 1rem;
+  background-color: white;
+  font-family: "Raleway", sans-serif;
+}
+
+.flyo__remaining p {
+  color: var(--gray);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.flyo__remaining p strong {
+  color: var(--background-color);
+  font-size: 3.5rem;
+}
+
+@media (min-width: 992px) {
+  body {
+    background-image: url("../images/bg-desktop.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+  }
+  .flyo {
+    flex-direction: row;
+    width: auto;
+    max-width: none;
+  }
+
+  .flyo__info {
+    width: auto;
+    min-width: 33rem;
+  }
+
+  .flyo__storage {
+    width: auto;
+    min-width: 50rem;
+  }
+
+  .flyo__remaining {
+    top: -4rem;
+    right: 4.4rem;
+    left: auto;
+    transform: none;
+  }
+
+  .flyo__remaining::after {
+    content: "";
+    position: absolute;
+    bottom: -2rem;
+    right: 0;
+    width: 0rem;
+    height: 0rem;
+    border-left: 3rem solid transparent;
+    border-right: 0px solid transparent;
+    border-top: 3rem solid white;
+  }
+}

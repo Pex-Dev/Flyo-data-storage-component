@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./src/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Fylo data storage component</title>
+    <link rel="stylesheet" href="./src/css/app.css" />
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="flyo">
+      <section class="flyo__info">
+        <img src="./src/images/logo.svg" alt="Flyo" />
+        <div class="flyo__icons">
+          <button type="button" class="flyo__icon">
+            <img src="./src/images/icon-document.svg" alt="Icon document" />
+          </button>
+          <button type="button" class="flyo__icon">
+            <img src="./src/images/icon-folder.svg" alt="Icon folder" />
+          </button>
+          <button type="button" class="flyo__icon">
+            <img src="./src/images/icon-upload.svg" alt="Icon upload" />
+          </button>
+        </div>
+      </section>
+      <section class="flyo__storage">
+        <p class="flyo__text">
+          You’ve used <strong>815 GB</strong> of your storage
+        </p>
+        <div class="flyo__progress">
+          <div class="flyo__bar">
+            <div class="flyo__bar--used"></div>
+          </div>
+          <div class="flyo__range">
+            <span>0 GB</span>
+            <span>1000 GB</span>
+          </div>
+        </div>
+        <div class="flyo__remaining">
+          <p><strong>185</strong> GB Left</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
